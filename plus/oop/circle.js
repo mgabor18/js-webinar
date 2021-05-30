@@ -9,8 +9,8 @@
 
 class Circle {
   constructor(r) {
-    if (r < 1) {
-      throw new Error("Radius can not be smaller than 1.");
+    if (r < 0) {
+      throw new Error("Radius can not be smaller than 0.");
     }
     this.r = r;
   }
