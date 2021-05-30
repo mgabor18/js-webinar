@@ -6,7 +6,7 @@
  *                     or empty array if it is not an object
  */
 
-function listProperties(o) {
+function properties(o) {
   if (typeof o !== "object") {
     return [];
   }

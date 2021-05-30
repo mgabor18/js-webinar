@@ -9,12 +9,15 @@
 
 class Circle {
   constructor(r) {
+    if (r < 1) {
+      throw new Error("Radius can not be smaller than 1.");
+    }
     this.r = r;
   }
-  area() {
+  getArea() {
     return Math.PI * this.r ** 2;
   }
-  perimeter() {
+  getPerimeter() {
     return 2 * this.r * Math.PI;
   }
 }
