@@ -1,14 +1,3 @@
-/*const ElementFinder = require("../mock/ElementFinder");
-const Browser = require("../mock/Browser");
-const Layout = require("../../pop/Layout");
-const Element = require("../../pop/Element");
-const expect = require("chai").expect;
-const HomePage = require("../../pop/HomePage");
-
-describe("HomePage Class", () => {
-  // TODO: write tests
-});
-*/
 const ElementFinder = require("../mock/ElementFinder");
 const Browser = require("../mock/Browser");
 const HomePage = require("../../pop/HomePage");
