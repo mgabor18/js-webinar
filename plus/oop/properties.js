@@ -10,5 +10,5 @@ module.exports = function properties(o) {
   if (typeof o !== "object") {
     return [];
   }
-  return (props = Object.keys(o));
+  return Object.keys(o);
 };
