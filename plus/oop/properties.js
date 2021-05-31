@@ -10,9 +10,5 @@ module.exports = function properties(o) {
   if (typeof o !== "object") {
     return [];
   }
-  let props = [];
-  for (let prop in o) {
-    props.push(prop);
-  }
-  return props;
+  return (props = Object.keys(o));
 };
