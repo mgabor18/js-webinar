@@ -10,8 +10,11 @@ module.exports = class HomePage extends Layout {
   constructor() {
     super("EPAM Home Page", "https://www.epam.com/", { css: "body" });
 
+    this.header = new Element("Header", { css: ".header" });
+    this.addChildren(this.header);
+
     this.logoElement = new Element("Logo", { css: ".header__logo" });
-    this.addChildren(this.logoElement);
+    this.header.addChildren(this.logoElement);
 
     this.contactUs = new Element("Contact Us", { css: ".cta-button__text" });
     this.addChildren(this.contactUs);

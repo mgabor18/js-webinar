@@ -53,10 +53,9 @@ describe("HomePage Class", () => {
   });
 
   describe("Children elements", () => {
-    it("should have Logo set as children", () => {
-      expect(homePage.children["Logo"].name).to.equal("Logo");
+    it("should have Logo set as Header's child element", () => {
+      expect(homePage.get("Logo").locator().css).to.equal(".header__logo");
     });
-
     it("should have Contact Us set as children", () => {
       expect(homePage.children["Contact Us"].name).to.equal("Contact Us");
     });
