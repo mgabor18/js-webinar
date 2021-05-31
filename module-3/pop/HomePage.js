@@ -3,20 +3,30 @@
  * Add main widgets and element of the page and write tests
  * for it (test/pop/HomePage.spec.js).
  */
-const Layout = require('./Layout');
-const Element = require('./Element');
-const Elements = require('./Elements');
+const Layout = require("./Layout");
+const Element = require("./Element");
 
 module.exports = class HomePage extends Layout {
-    constructor() {
-        super('/');
+  constructor() {
+    super("EPAM Home Page", "https://www.epam.com/", { css: "body" });
 
-        this.header = new Element('Header', by.css('header'));
-        this.header.addChildren(new Element("Logo", by.css('.header__logo')));
-        this.menuItems = new Elements("Menu Items", by.css('.top-navigation__item-link'));
-    }
+    this.header = new Element("Header", { css: ".header" });
+    this.addChildren(this.header);
 
-    get logo() {
-        return this.get('Logo');
-    }
-}
+    this.logoElement = new Element("Logo", { css: ".header__logo" });
+    this.header.addChildren(this.logoElement);
+
+    this.contactUs = new Element("Contact Us", { css: ".cta-button__text" });
+    this.addChildren(this.contactUs);
+
+    this.titleElement = new Element("Title", {
+      css: "span.title-slider__slide-row",
+    });
+    this.addChildren(this.titleElement);
+
+    this.footerOurBrands = new Element("Our Brands", {
+      css: ".footer__brands-title",
+    });
+    this.addChildren(this.footerOurBrands);
+  }
+};
