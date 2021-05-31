@@ -31,7 +31,15 @@ module.exports = class Element {
     }
     this.children[child.name] = child;
   }
-  get() {
-    return;
+  get(name) {
+    if (name === undefined) {
+      return element(this.locator);
+    }
+    try {
+      return element(this.children[name].locator);
+    } catch (e) {
+      throw new Error("Children is not found!");
+    }
+    //return this.children[name].get();
   }
 };

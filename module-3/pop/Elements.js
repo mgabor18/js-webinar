@@ -24,5 +24,11 @@ module.exports = class Elements extends Element {
   addChildren() {
     throw new Error("Elements can not have children.");
   }
-  all() {}
+  all() {
+    return element.all(this.locator);
+  }
+
+  get(num) {
+    return this.all().get(num);
+  }
 };
