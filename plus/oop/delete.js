@@ -8,11 +8,11 @@
  * @returns {object} the new object without the given property
  */
 
-function del(o, key) {
+module.exports = function del(o, key) {
   if (typeof o !== "object") {
     throw new Error("First parameter must be an object.");
   }
   let obj = { ...o };
   delete obj[key];
   return obj;
-}
+};

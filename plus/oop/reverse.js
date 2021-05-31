@@ -6,7 +6,10 @@
  * @returns {object} the new object
  */
 
-function switchPropAndKey(o) {
+module.exports = function switchPropAndKey(o) {
+  if (typeof o !== "object") {
+    throw new Error("First parameter must be an object.");
+  }
   let object = {};
   let tmp;
   let keys = Object.keys(o);
@@ -19,4 +22,4 @@ function switchPropAndKey(o) {
     object[keys[i]] = values[i];
   }
   return object;
-}
+};

@@ -6,7 +6,7 @@
  *                     or empty array if it is not an object
  */
 
-function properties(o) {
+module.exports = function properties(o) {
   if (typeof o !== "object") {
     return [];
   }
@@ -15,4 +15,4 @@ function properties(o) {
     props.push(prop);
   }
   return props;
-}
+};
