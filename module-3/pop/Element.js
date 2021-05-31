@@ -35,11 +35,14 @@ module.exports = class Element {
     if (name === undefined) {
       return element(this.locator);
     }
-    try {
+    if (this.children[name]) {
       return element(this.children[name].locator);
-    } catch (e) {
-      throw new Error("Children is not found!");
     }
-    //return this.children[name].get();
+    if (this.children !== {}) {
+      for (let key in this.children) {
+        return this.children[key].get(name);
+      }
+    }
+    throw new Error("Children is not found!");
   }
 };
