@@ -7,13 +7,18 @@
  */
 
 module.exports = async function sleep(sec) {
-  if (typeof sec !== "number") {
+  if (isNaN(sec)) {
     throw new Error("Sec parameter must be a number", sec);
   }
   const defaultWait = 10000;
   let wait = sec * 1000;
 
-  return new Promise(function (resolve, reject) {
-    setTimeout(resolve, Math.min(wait, defaultWait));
+  if (wait < defaultWait) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, wait);
+    });
+  }
+  return new Promise((reject) => {
+    setTimeout(reject, defaultWait);
   });
 };
