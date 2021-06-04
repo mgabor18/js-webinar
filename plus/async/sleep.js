@@ -5,3 +5,15 @@
  * @returns {Promise} the promise which resolves when wait if over
  *                    or rejects if parameter is not correct
  */
+
+module.exports = async function sleep(sec) {
+  if (typeof sec !== "number") {
+    throw new Error("Sec parameter must be a number", sec);
+  }
+  const defaultWait = 10000;
+  let wait = sec * 1000;
+
+  return new Promise(function (resolve, reject) {
+    setTimeout(resolve, Math.min(wait, defaultWait));
+  });
+};
