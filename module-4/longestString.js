@@ -6,3 +6,20 @@
  * @param {Array.<string>} strings
  * @returns {string} longest string or empty string in other cases
  */
+
+module.exports = function longestString(strings) {
+  if (!Array.isArray(strings) || !strings.length) {
+    return "";
+  }
+  let strs = strings
+    .map((item) => {
+      if (typeof item === "string") {
+        return item;
+      } else {
+        return "";
+      }
+    })
+    .filter((word) => word !== "")
+    .sort();
+  return strs.length ? strs[0] : "";
+};
