@@ -19,7 +19,7 @@ describe("Module 4 - romanToDec", () => {
 
   negativeTestData.forEach((data) => {
     it("should throw exception " + JSON.stringify(data.arguments), () => {
-      expect(romanToDec.apply(null, data.arguments)).to.throw();
+      expect(() => romanToDec.apply(null, data.arguments)).to.throw(Error);
     });
   });
 });

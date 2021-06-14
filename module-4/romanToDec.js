@@ -9,8 +9,8 @@
  */
 
 module.exports = function romanToDec(roman) {
-  if (typeof roman !== "string") {
-    throw new Error(`${roman} is not a string!`);
+  if (typeof roman !== "string" || !roman.length) {
+    throw new Error(`${roman} is not a string or its empty!`);
   }
   let result = 0;
   let numbers = roman
