@@ -12,13 +12,7 @@ module.exports = function longestString(strings) {
     return "";
   }
   let strs = strings
-    .map((item) => {
-      if (typeof item === "string") {
-        return item;
-      } else {
-        return "";
-      }
-    })
+    .map((item) => (typeof item === "string" ? item : ""))
     .filter((word) => word !== "")
     .sort();
   return strs.length ? strs[0] : "";

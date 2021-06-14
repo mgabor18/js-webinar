@@ -27,12 +27,10 @@ module.exports = function arraySorted(items, ignore) {
         .join("");
     });
   }
-  let sortedCleanItems = [...cleanItems].sort();
   for (let i = 0; i < cleanItems.length; i++) {
-    if (cleanItems[i] !== sortedCleanItems[i]) {
+    if (cleanItems[i] !== [...cleanItems].sort()[i]) {
       return false;
     }
   }
-
   return true;
 };

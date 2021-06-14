@@ -14,6 +14,7 @@
 
 module.exports = function arrayEqual(first, second) {
   if (!Array.isArray(first) && !Array.isArray(second)) {
+    console.warn(`${first} or ${second} is not an array.`);
     return false;
   }
   if (first.length !== second.length) {
